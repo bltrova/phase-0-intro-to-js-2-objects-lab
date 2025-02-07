@@ -5,30 +5,23 @@ const employee = {
 };
 
 function updateEmployeeWithKeyAndValue(obj, key, value) {
-  const newEmployee = {...obj};
-  newEmployee[key] = value;
-  return newEmployee;
+const newEmployee = {...obj};
+newEmployee[key] = value;
+return newEmployee;
 }
 
 function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
-  employee[key] = value;
-  return employee;
+employee[key] = value;
+return employee;
 }
 
 function deleteFromEmployeeByKey(employee, key) {
-  let newEmployee = {...key};
+  const newEmployee = {...employee};
+  delete newEmployee[key];
   return newEmployee;
 }
 
-// function destructivelyDeleteFromEmployeeByKey(employee, key) {
-//   delete employee[key];
-//   const newEmployee = { ...employee };
-//   // employee[key] = undefined;
-//   return employee && newEmployee;
-// }
-
 function destructivelyDeleteFromEmployeeByKey(employee, key) {
   delete employee[key];
-  let newEmployee = { ...employee };
   return employee;
 }
